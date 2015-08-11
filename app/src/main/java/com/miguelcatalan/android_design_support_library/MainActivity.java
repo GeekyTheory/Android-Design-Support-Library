@@ -2,6 +2,7 @@ package com.miguelcatalan.android_design_support_library;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -10,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     DrawerLayout drawerLayout;
 
@@ -36,16 +37,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupFAB() {
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Do something cool
-            }
-        });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(this);
     }
 
-    private void setupNavigationView(){
+    private void setupNavigationView() {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
     }
@@ -58,5 +54,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.fab) {
+
+            Snackbar
+                    .make(findViewById(R.id.container), "This is Snackbar", Snackbar.LENGTH_LONG)
+                    .setAction("Action", this) //To add additional action when clicked
+                    .show(); // Don’t forget to show!
+        }
     }
 }
