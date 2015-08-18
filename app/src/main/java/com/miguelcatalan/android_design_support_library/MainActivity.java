@@ -3,7 +3,9 @@ package com.miguelcatalan.android_design_support_library;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +16,8 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     DrawerLayout drawerLayout;
-
+    TabLayout tabLayout;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setupNavigationView();
         setupToolbar();
+        setupTabLayout();
         setupFAB();
     }
 
@@ -44,6 +48,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupNavigationView() {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+    }
+
+    private void setupTabLayout(){
+
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(),
+                MainActivity.this));
+
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
