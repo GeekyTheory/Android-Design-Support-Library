@@ -9,4 +9,16 @@
     <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textColor">@color/my_primary_light</item>
     </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/my_secondary_text</item>
+
+        <item name="android:textColorPrimary">@color/my_primary_text</item>
+        <item name="android:textColorSecondary">@color/my_secondary_text</item>
+
+        <item name="colorAccent">@color/my_primary</item>
+        <item name="colorControlNormal">@color/my_secondary_text</item>
+        <item name="colorControlActivated">@color/my_primary_dark</item>
+    </style>
+
 </resources>

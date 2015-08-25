@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TextInputLayoutActivity"
+            android:label="@string/title_activity_text_input_layout" >
+        </activity>
     </application>
 
 </manifest>

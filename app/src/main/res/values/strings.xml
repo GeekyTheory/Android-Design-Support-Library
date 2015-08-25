@@ -4,8 +4,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="drawer_item_posts">Posts</string>
-    <string name="drawer_item_users">Users</string>
+    <string name="drawer_item_main">Main</string>
+    <string name="drawer_item_til">TextInputLayoutActivity</string>
     <string name="drawer_item_settings">Settings</string>
+    <string name="title_activity_text_input_layout">TextInputLayoutActivity</string>
 
 </resources>

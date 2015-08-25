@@ -5,11 +5,11 @@
         <item
             android:id="@+id/navigation_item_1"
             android:icon="@drawable/ic_posts"
-            android:title="@string/drawer_item_posts" />
+            android:title="@string/drawer_item_main" />
         <item
             android:id="@+id/navigation_item_2"
             android:icon="@drawable/ic_users"
-            android:title="@string/drawer_item_users" />
+            android:title="@string/drawer_item_til" />
 
         <item
             android:id="@+id/navigation_item_3"
